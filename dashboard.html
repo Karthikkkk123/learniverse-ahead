@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | AI Tutor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+  <div id="app" class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="flex items-center px-4 py-5">
+        <div class="flex items-center animate-fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary mr-2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          <span class="text-xl font-semibold text-gradient">AI Tutor</span>
+        </div>
+      </div>
+
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </div>
+
+      <hr class="border-t border-border my-2">
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link active">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          <span>Courses</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+          </svg>
+          <span>Lessons</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+            <line x1="3" x2="21" y1="9" y2="9"></line>
+            <line x1="3" x2="21" y1="15" y2="15"></line>
+            <line x1="9" x2="9" y1="3" y2="21"></line>
+            <line x1="15" x2="15" y1="3" y2="21"></line>
+          </svg>
+          <span>Quizzes</span>
+        </a>
+        <a href="chat.html" class="sidebar-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>AI Tutor Chat</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M12 2v4.5"></path>
+            <path d="M20 12.5v-2.5a8 8 0 0 0-16 0v2.5"></path>
+            <path d="M12 11.5v5"></path>
+            <path d="m8 17 4 4 4-4"></path>
+          </svg>
+          <span>Achievements</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <div class="mt-auto p-4 border-t border-border flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="mr-2 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="animate-fade-in">
+            <p class="text-sm font-medium">Guest User</p>
+            <p class="text-xs text-muted-foreground">student@example.com</p>
+          </div>
+        </div>
+        <button id="theme-toggle" class="rounded-full w-9 h-9 transition-all duration-300 ease-in-out" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Welcome Header -->
+        <div class="mb-8 animate-slide-in">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+              <h1 class="text-3xl font-bold tracking-tight">Welcome back!</h1>
+              <p class="text-muted-foreground mt-1">
+                Pick up where you left off with your personalized learning journey.
+              </p>
+            </div>
+            <div class="mt-4 md:mt-0 glass-effect p-4 rounded-xl flex items-center space-x-4">
+              <div class="bg-primary/10 rounded-full p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-primary">
+                  <path d="M12 2v4.5"></path>
+                  <path d="M20 12.5v-2.5a8 8 0 0 0-16 0v2.5"></path>
+                  <path d="M12 11.5v5"></path>
+                  <path d="m8 17 4 4 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="font-medium">Level 3</span>
+                  <span class="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">
+                    325 XP
+                  </span>
+                </div>
+                <div class="flex items-center gap-2 mt-1">
+                  <div class="progress-bar">
+                    <div class="progress-fill" id="xp-progress"></div>
+                  </div>
+                  <span class="text-xs text-muted-foreground">175 XP to level 4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex flex-wrap gap-3">
+            <div class="flex items-center space-x-1 text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-green-500">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>3 lessons completed this week</span>
+            </div>
+            <div class="flex items-center space-x-1 text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-green-500">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>2 quizzes aced</span>
+            </div>
+            <div class="badge-new flex items-center space-x-1 text-sm text-white bg-primary px-3 py-1 rounded-full">
+              <span>New content available!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Progress -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-6">
+          <!-- Math Progress -->
+          <div class="card card-hover-effect animate-slide-in" style="animation-delay: 0.1s;">
+            <div class="card-header">
+              <div class="flex justify-between items-start">
+                <div class="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-blue-600 dark:text-blue-400">
+                    <path d="M16 16c1.2-1.2 2-2.7 2-4.5 0-1.8-.8-3.4-2-4.5M8 16c-1.2-1.2-2-2.7-2-4.5 0-1.8.8-3.4 2-4.5"></path>
+                    <path d="M12 4V2"></path>
+                    <path d="M12 22v-2"></path>
+                    <path d="M4 12H2"></path>
+                    <path d="M22 12h-2"></path>
+                    <path d="m19 16-3-3 3-3"></path>
+                    <path d="m5 8 3 3-3 3"></path>
+                  </svg>
+                </div>
+                <div class="bg-blue-50 dark:bg-blue-900/10 px-2 py-1 rounded-md text-xs font-medium text-blue-600 dark:text-blue-400">
+                  <span class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 mr-1">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                      <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    5% Improvement
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="text-lg font-semibold mb-1">Mathematics</h3>
+              <p class="text-sm text-muted-foreground mb-4">Algebra & Geometry</p>
+              <div class="space-y-2">
+                <div class="flex justify-between text-sm font-medium">
+                  <span>Progress</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="flex justify-between items-center w-full text-sm">
+                <div class="flex items-center text-muted-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Last: 2 days ago</span>
+                </div>
+                <a href="#" class="flex items-center text-primary font-medium">
+                  <span>Continue</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 ml-1">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Science Progress -->
+          <div class="card card-hover-effect animate-slide-in" style="animation-delay: 0.2s;">
+            <div class="card-header">
+              <div class="flex justify-between items-start">
+                <div class="bg-green-100 dark:bg-green-900/30 p-2 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-green-600 dark:text-green-400">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div class="bg-green-50 dark:bg-green-900/10 px-2 py-1 rounded-md text-xs font-medium text-green-600 dark:text-green-400">
+                  <span class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 mr-1">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                      <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    10% Improvement
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="text-lg font-semibold mb-1">Science</h3>
+              <p class="text-sm text-muted-foreground mb-4">Physics & Chemistry</p>
+              <div class="space-y-2">
+                <div class="flex justify-between text-sm font-medium">
+                  <span>Progress</span>
+                  <span>40%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 40%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="flex justify-between items-center w-full text-sm">
+                <div class="flex items-center text-muted-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Last: 1 day ago</span>
+                </div>
+                <a href="#" class="flex items-center text-primary font-medium">
+                  <span>Continue</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 ml-1">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- History Progress -->
+          <div class="card card-hover-effect animate-slide-in" style="animation-delay: 0.3s;">
+            <div class="card-header">
+              <div class="flex justify-between items-start">
+                <div class="bg-amber-100 dark:bg-amber-900/30 p-2 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-amber-600 dark:text-amber-400">
+                    <path d="M16 16c1.2-1.2 2-2.7 2-4.5 0-1.8-.8-3.4-2-4.5M8 16c-1.2-1.2-2-2.7-2-4.5 0-1.8.8-3.4 2-4.5"></path>
+                    <path d="M12 4V2"></path>
+                    <path d="M12 22v-2"></path>
+                    <path d="M4 12H2"></path>
+                    <path d="M22 12h-2"></path>
+                    <path d="m19 16-3-3 3-3"></path>
+                    <path d="m5 8 3 3-3 3"></path>
+                  </svg>
+                </div>
+                <div class="bg-amber-50 dark:bg-amber-900/10 px-2 py-1 rounded-md text-xs font-medium text-amber-600 dark:text-amber-400">
+                  <span class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 mr-1">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                      <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    15% Improvement
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="text-lg font-semibold mb-1">History</h3>
+              <p class="text-sm text-muted-foreground mb-4">World History</p>
+              <div class="space-y-2">
+                <div class="flex justify-between text-sm font-medium">
+                  <span>Progress</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="flex justify-between items-center w-full text-sm">
+                <div class="flex items-center text-muted-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Last: 5 days ago</span>
+                </div>
+                <a href="#" class="flex items-center text-primary font-medium">
+                  <span>Continue</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 ml-1">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommended Lessons -->
+        <div class="my-8">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">Recommended For You</h2>
+            <button class="text-sm px-3 py-2 rounded-md">
+              View all
+            </button>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Lesson 1 -->
+            <div class="card-lesson card-hover-effect overflow-hidden border animate-slide-in" style="animation-delay: 0.1s;">
+              <div class="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                  alt="Quadratic Equations Made Simple" 
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                >
+                <div class="absolute top-3 right-3 bg-primary text-white text-xs px-2 py-1 rounded-full flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 mr-1">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                  New
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                  <p class="text-white text-sm font-medium">Mathematics</p>
+                </div>
+              </div>
+              <div class="p-4 pb-2">
+                <h3 class="text-lg font-semibold">Quadratic Equations Made Simple</h3>
+                <div class="flex items-center mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" class="h-4 w-4 text-amber-500 mr-1">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span class="text-amber-500 font-medium mr-2">4.8</span>
+                  <span class="text-muted-foreground text-sm">(120 ratings)</span>
+                </div>
+              </div>
+              <div class="px-4 pb-4">
+                <div class="flex items-center text-sm text-muted-foreground space-x-4">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>15 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    <span>Intermediate</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 pt-0">
+                <button class="w-full h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center text-sm font-medium">
+                  Start Lesson
+                </button>
+              </div>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="card-lesson card-hover-effect overflow-hidden border animate-slide-in" style="animation-delay: 0.2s;">
+              <div class="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                  alt="Introduction to Chemical Reactions" 
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                >
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                  <p class="text-white text-sm font-medium">Chemistry</p>
+                </div>
+              </div>
+              <div class="p-4 pb-2">
+                <h3 class="text-lg font-semibold">Introduction to Chemical Reactions</h3>
+                <div class="flex items-center mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" class="h-4 w-4 text-amber-500 mr-1">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span class="text-amber-500 font-medium mr-2">4.8</span>
+                  <span class="text-muted-foreground text-sm">(120 ratings)</span>
+                </div>
+              </div>
+              <div class="px-4 pb-4">
+                <div class="flex items-center text-sm text-muted-foreground space-x-4">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>20 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    <span>Beginner</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 pt-0">
+                <button class="w-full h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center text-sm font-medium">
+                  Start Lesson
+                </button>
+              </div>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="card-lesson card-hover-effect overflow-hidden border animate-slide-in" style="animation-delay: 0.3s;">
+              <div class="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1549737221-bef65e2604a6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                  alt="The French Revolution: Key Events" 
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                >
+                <div class="absolute top-3 right-3 bg-primary text-white text-xs px-2 py-1 rounded-full flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 mr-1">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                  New
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                  <p class="text-white text-sm font-medium">History</p>
+                </div>
+              </div>
+              <div class="p-4 pb-2">
+                <h3 class="text-lg font-semibold">The French Revolution: Key Events</h3>
+                <div class="flex items-center mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" class="h-4 w-4 text-amber-500 mr-1">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span class="text-amber-500 font-medium mr-2">4.8</span>
+                  <span class="text-muted-foreground text-sm">(120 ratings)</span>
+                </div>
+              </div>
+              <div class="px-4 pb-4">
+                <div class="flex items-center text-sm text-muted-foreground space-x-4">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>25 min</span>
+                  </div>
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    <span>Advanced</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 pt-0">
+                <button class="w-full h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center text-sm font-medium">
+                  Start Lesson
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Quizzes -->
+        <div class="my-8">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">Upcoming Quizzes</h2>
+            <button class="text-sm px-3 py-2 rounded-md">
+              View all
+            </button>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <!-- Quiz 1 -->
+            <div class="glass-effect rounded-xl p-5 border animate-slide-in card-hover-effect" style="animation-delay: 0.1s;">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h3 class="font-semibold text-lg">Algebra Fundamentals</h3>
+                  <p class="text-sm text-muted-foreground">Mathematics</p>
+                </div>
+                <div class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">
+                  Due in 2 days
+                </div>
+              </div>
+              
+              <div class="flex flex-wrap gap-4 my-3">
+                <div class="flex items-center text-sm">
+                  <div class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                      <path d="M12 2v4.5"></path>
+                      <path d="M20 12.5v-2.5a8 8 0 0 0-16 0v2.5"></path>
+                      <path d="M12 11.5v5"></path>
+                      <path d="m8 17 4 4 4-4"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs text-muted-foreground">Points Available</p>
+                    <p class="font-semibold">100 XP</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center text-sm">
+                  <div class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs text-muted-foreground">Time Estimate</p>
+                    <p class="font-semibold">15 min</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-5">
+                <button class="w-full h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center text-sm font-medium">
+                  Start Quiz 
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-4 w-4">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz 2 -->
+            <div class="glass-effect rounded-xl p-5 border animate-slide-in card-hover-effect" style="animation-delay: 0.2s;">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h3 class="font-semibold text-lg">Chemical Reactions Quiz</h3>
+                  <p class="text-sm text-muted-foreground">Chemistry</p>
+                </div>
+                <div class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">
+                  Due in Tomorrow
+                </div>
+              </div>
+              
+              <div class="flex flex-wrap gap-4 my-3">
+                <div class="flex items-center text-sm">
+                  <div class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                      <path d="M12 2v4.5"></path>
+                      <path d="M20 12.5v-2.5a8 8 0 0 0-16 0v2.5"></path>
+                      <path d="M12 11.5v5"></path>
+                      <path d="m8 17 4 4 4-4"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs text-muted-foreground">Points Available</p>
+                    <p class="font-semibold">150 XP</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center text-sm">
+                  <div class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs text-muted-foreground">Time Estimate</p>
+                    <p class="font-semibold">20 min</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-5">
+                <button class="w-full h-10 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center text-sm font-medium">
+                  Start Quiz 
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-4 w-4">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-10"></div>
+    </main>
+
+    <!-- Mobile sidebar toggle -->
+    <button id="mobile-sidebar-toggle" class="fixed top-4 left-4 z-50 rounded-full w-10 h-10 bg-background shadow-sm border flex items-center justify-center lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Toast notification container -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50 flex flex-col gap-2"></div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
